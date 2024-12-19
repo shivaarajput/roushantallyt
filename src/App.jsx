@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage"; // Main application
 import Admin from "./pages/Admin"; // Admin dashboard
+import NotFound from "./pages/NotFound"; // Admin dashboard
 
 export default function App() {
   return (
@@ -12,8 +13,12 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
 
         {/* Admin Dashboard */}
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin-private-route" element={<Admin />} />
+
+        {/* NotFound Dashboard */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
+
     </Router>
   );
 }
