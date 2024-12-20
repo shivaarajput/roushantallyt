@@ -1,4 +1,5 @@
 import React from "react";
+import Logout from "../components/Logout";
 import AdminGallery from "../components/AdminGallery";
 import AdminTestimonial from "../components/AdminTestimonial";
 import AdminMessages from "../components/AdminMessages";
@@ -8,6 +9,8 @@ const Admin = () => {
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
       <h1 className="text-3xl font-bold mb-8 text-center">Admin Dashboard</h1>
+
+      <Logout />
 
       <AdminNav />
 

@@ -37,6 +37,9 @@ const Navbar = () => {
               <a href="#contact" className="text-gray-800 hover:text-blue-600">
                 Contact
               </a>
+              <a href="/admin-private-route" className="text-gray-800 hover:text-blue-600">
+                Admin Login
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -120,6 +123,12 @@ const Navbar = () => {
                 className="block text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium"
               >
                 Contact
+              </a>
+              <a 
+                href="/admin-private-route" 
+                className="block text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium"
+              >
+                Admin Login
               </a>
             </div>
           </div>
