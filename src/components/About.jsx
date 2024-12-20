@@ -14,7 +14,7 @@ const About = () => {
         {/* Image */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden shadow-lg">
           <img
-            src="https://raw.githubusercontent.com/shivaarajput/RaushanSir/refs/heads/master/static/assets/img/me.jpg"
+            src={`https://fsubnjfvklblrbyyetps.supabase.co/storage/v1/object/public/superman/profile/background-image.jpg?${new Date().getTime()}`}
             alt="About Me"
             className="w-full h-full object-cover"
           />

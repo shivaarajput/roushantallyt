@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaPhone, FaInstagram, FaYoutube, FaTelegramPlane } from "react-icons/fa"; // New icons for the social links
 import { database } from "../firebase";
 import { ref, onValue } from "firebase/database";
 
@@ -8,10 +8,10 @@ const Home = () => {
     name: "",
     backgroundImage: "",
     socialLinks: {
-      facebook: "",
-      twitter: "",
-      linkedin: "",
-      github: "",
+      phone: "",
+      instagram: "",
+      youtube: "",
+      telegram: "",
     },
   });
 
@@ -24,12 +24,12 @@ const Home = () => {
       if (data) {
         setProfileData({
           name: data.name || "Roushan Kumar",
-          backgroundImage: data.backgroundImage || "https://raw.githubusercontent.com/shivaarajput/RaushanSir/refs/heads/master/static/assets/img/home-bg.jpg",
+          backgroundImage: `https://fsubnjfvklblrbyyetps.supabase.co/storage/v1/object/public/superman/profile/profile-image.jpg?${new Date().getTime()}` || "https://via.placeholder.com/800x300",
           socialLinks: {
-            facebook: data.socialLinks?.facebook || "#",
-            twitter: data.socialLinks?.twitter || "#",
-            linkedin: data.socialLinks?.linkedin || "#",
-            github: data.socialLinks?.github || "#",
+            phone: data.socialLinks?.phone || "#",
+            instagram: data.socialLinks?.instagram || "#",
+            youtube: data.socialLinks?.youtube || "#",
+            telegram: data.socialLinks?.telegram || "#",
           },
         });
       }
@@ -63,37 +63,42 @@ const Home = () => {
 
           {/* Social Media Links */}
           <div className="flex justify-center lg:justify-start gap-6 mt-6">
+            {/* Phone Link */}
             <a
-              href={profileData.socialLinks.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 transition-all"
+              href={`tel:${profileData.socialLinks.phone}`}
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-green-500 hover:bg-green-600 transition-all"
             >
-              <FaFacebookF size={20} className="text-white" />
+              <FaPhone size={20} className="text-white" />
             </a>
+
+            {/* Instagram Link */}
             <a
-              href={profileData.socialLinks.twitter}
+              href={profileData.socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 transition-all"
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-pink-500 hover:bg-pink-600 transition-all"
             >
-              <FaTwitter size={20} className="text-white" />
+              <FaInstagram size={20} className="text-white" />
             </a>
+
+            {/* YouTube Link */}
             <a
-              href={profileData.socialLinks.linkedin}
+              href={profileData.socialLinks.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-700 hover:bg-blue-800 transition-all"
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-red-500 hover:bg-red-600 transition-all"
             >
-              <FaLinkedinIn size={20} className="text-white" />
+              <FaYoutube size={20} className="text-white" />
             </a>
+
+            {/* Telegram Link */}
             <a
-              href={profileData.socialLinks.github}
+              href={profileData.socialLinks.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full flex items-center justify-center bg-gray-700 hover:bg-gray-800 transition-all"
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-500 hover:bg-blue-600 transition-all"
             >
-              <FaGithub size={20} className="text-white" />
+              <FaTelegramPlane size={20} className="text-white" />
             </a>
           </div>
         </div>
