@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  ExternalLink, BookOpen
+  ExternalLink, BookOpen, X, Check
 } from 'lucide-react';
 
 
